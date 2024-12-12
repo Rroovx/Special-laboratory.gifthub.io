@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Laboratory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #f9c5d1, #9795ef);
+        }
+        .ecard {
+            width: 500px;
+            height: auto;
+            background-color:white;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+        }
+        .ecard h1 {
+            font-size: 24px;
+            margin: 15px 0;
+            color: #333;
+            font-family:serif ;
+        }
+        .ecard p {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #666;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background: #A888B5;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background: #E2BFD9;
+        }
+        .button:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+        #hiddenMessage {
+            display: none;
+            margin-top: 20px;
+            color: black;
+            font-size: 18px;
+            font-family: serif ;
+        }
+    </style>
+</head>
+<body>
+    <div class="ecard">
+        <h1 id="greeting">Greetings!</h1>
+        <p>Hi Ma'am Roan❤️</p>
+        <button id="viewButton" class="button" onclick="viewMessage()">View Message</button>
+        <p id="hiddenMessage" aria-live="polite"></p>
+    </div>
+
+    <script>
+        function viewMessage() {
+            const message = "I hope you have a happy and peaceful holiday season! We appreciate all of your help and advice this year, as well as the wealth of knowledge you have given with us. I wish you and your loved ones an enjoyable holiday season. In excitement happy new year!Thank you, po.😊" ;
+            const messageElement = document.getElementById("hiddenMessage");
+            const greetingElement = document.getElementById("greeting");
+            const buttonElement = document.getElementById("viewButton");
+
+            
+            if (greetingElement) {
+                greetingElement.remove();
+            }
+
+            
+            messageElement.textContent = message;
+            messageElement.style.display = "block";
+
+            
+            buttonElement.textContent = "Message Viewed";
+            buttonElement.disabled = true;
+        }
+    </script>
+</body>
+</html>
